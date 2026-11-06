@@ -1,25 +1,34 @@
-#include "printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/05 22:55:40 by chbeseme          #+#    #+#             */
+/*   Updated: 2026/11/05 23:24:31 by chbeseme         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// static int	ft_lookat(char c, va_list args)
-// {
-// 	if (c == 'c')
-// 		return (ft_print_char(va_arg(args, int)));
-// 	if (c == 's')
-// 		return (ft_print_str(va_arg(args, char *)));
-// 	if (c == 'p')
-// 		return (ft_print_ptr(va_arg(args, void *)));
-// 	if (c == 'd' || c == 'i')
-// 		return (ft_print_nbr(va_arg(args, int)));
-// 	if (c == 'u')
-// 		return (ft_print_unsigned(va_arg(args, unsigned int)));
-// 	if (c == 'x' || c == 'X')
-// 		return (ft_print_hex(va_arg(args, unsigned int), c));
-// 	if (c == '%')
-// 		return (ft_print_char('%'));
-// 	return (0);
-// }
+#include "printf.h"
 
 int	ft_printf(const char *format, ...)
 {
-    int i
+	int	i;
+
+	i = 0;
+	while (format[i])
+	{
+		if (format[i + 1] == '%')
+			return -1;
+		else
+			ft_putchar(format[i]);
+		i++;
+	}
+	return 0;
+}
+
+int main(void) {
+	printf("\n%d", printf("salut coucou %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %s", "123456790"));
+	return 0;
 }

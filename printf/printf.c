@@ -12,23 +12,48 @@
 
 #include "printf.h"
 
+static int	ft_dispatch(char c, va_list args)
+{
+	if (c == 'c')
+		return (ft_print_char(va_arg(args, int)));
+	if (c == 's')
+		return (ft_print_str(va_arg(args, char *)));
+	if (c == 'p')
+		return (ft_print_ptr(va_arg(args, void *)));
+	if (c == 'd' || c == 'i')
+		return (ft_print_number(va_arg(args, int)));
+	if (c == 'u')
+		return (ft_print_unsigned(va_arg(args, unsigned int)));
+	if (c == 'x' || c == 'X')
+		return (ft_print_hex(va_arg(args, unsigned int), c));
+	if (c == '%')
+		return (ft_print_char('%'));
+	return (0);
+}
+
 int	ft_printf(const char *format, ...)
 {
-	int	i;
+	va_list	args;
+	int		i;
+	int		count;
 
+	if (!format)
+		return (-1);
+	va_start(args, format);
 	i = 0;
+	count = 0;
 	while (format[i])
 	{
-		if (format[i + 1] == '%')
-			return -1;
-		else
-			ft_putchar(format[i]);
+		if (format[i] == '%' && format[i + 1])
+		{
+			i++;
+			count += ft_dispatch(format[i], args);
+		}
+		else if (format[i] != '%')
+			count += ft_print_char(format[i]);
 		i++;
 	}
-	return 0;
+	va_end(args);
+	return (count);
 }
 
-int main(void) {
-	printf("\n%d", printf("salut coucou %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %s", "123456790"));
-	return 0;
-}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: charlesbeseme <charlesbeseme@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/10 14:43:42 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/10 14:48:41 by chbeseme         ###   ########.fr       */
+/*   Created: 2026/11/11 19:02:28 by charlesbese       #+#    #+#             */
+/*   Updated: 2026/11/11 19:02:44 by charlesbese      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

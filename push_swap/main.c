@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charlesbeseme <charlesbeseme@student.42    +#+  +:+       +#+        */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 18:53:12 by charlesbese       #+#    #+#             */
-/*   Updated: 2026/11/11 19:05:03 by charlesbese      ###   ########.fr       */
+/*   Updated: 2026/11/12 17:50:32 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,30 @@ static int	ft_is_valid_type(char *type)
 	return (0);
 }
 
+static int	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	int	*a;
+	int	*norm;
 	int	type;
 
 	if (argc < 3)
-		return (write(2, "Error\n", 6), 1);
+		return (ft_error());
 	type = ft_is_valid_type(argv[1]);
 	if (type == 0)
-		return (write(2, "Error\n", 6), 1);
+		return (ft_error());
 	a = ft_parser(argc, argv);
 	if (!a)
-		return (write(2, "Error\n", 6), 1);
+		return (ft_error());
+	norm = ft_normalize(a, argc - 2);
 	free(a);
+	if (!norm)
+		return (ft_error());
+	free(norm);
 	return (0);
 }

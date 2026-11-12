@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charlesbeseme <charlesbeseme@student.42    +#+  +:+       +#+        */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:00:12 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/11 19:01:48 by charlesbese      ###   ########.fr       */
+/*   Updated: 2026/11/12 17:48:04 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 
 int	ft_strcmp(char *s1, char *s2);
 int	*ft_parser(int argc, char **argv);
+int	*ft_normalize(int *a, int size);
 
 #endif

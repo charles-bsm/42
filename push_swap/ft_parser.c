@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charlesbeseme <charlesbeseme@student.42    +#+  +:+       +#+        */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:48:38 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/11 19:07:00 by charlesbese      ###   ########.fr       */
+/*   Updated: 2026/11/12 17:54:11 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,14 @@ int	*ft_parser(int argc, char **argv)
 		free(a);
 		return (NULL);
 	}
-	size = 0;
-	while(a[size])
+	int	i;
+
+	i = 0;
+	while (i < size)
 	{
-		printf("%d\n", a[size]);
-		size++;
+		printf("\t%d", a[i]);
+		i++;
 	}
+	printf("\n");
 	return (a);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:48:38 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/12 17:54:11 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/13 11:28:18 by tavenel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "push_swap.h"
 
 static int	ft_is_valid_number(const char *s)
 {
@@ -105,14 +105,12 @@ int	*ft_parser(int argc, char **argv)
 		free(a);
 		return (NULL);
 	}
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("\t%d", a[i]);
-		i++;
-	}
-	printf("\n");
 	return (a);
 }
+// i = 0;
+// while (i < size)
+// {
+// 	printf("\t%d", a[i]);
+// 	i++;
+// }
+// printf("\n");

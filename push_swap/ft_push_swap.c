@@ -3,12 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charlesbeseme <charlesbeseme@student.42    +#+  +:+       +#+        */
+/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:00:06 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/11 19:02:23 by charlesbese      ###   ########.fr       */
+/*   Updated: 2026/11/13 11:14:39 by tavenel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
-
+#include "push_swap.h"

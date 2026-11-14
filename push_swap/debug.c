@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.h                                     :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/09 16:00:12 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/12 17:48:04 by chbeseme         ###   ########.fr       */
+/*   Created: 2026/11/13 14:29:09 by chbeseme          #+#    #+#             */
+/*   Updated: 2026/11/13 14:29:21 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
+void	print_stacks(int *a, int *b, int size_a, int size_b)
+{
+	int	i;
 
-int	ft_strcmp(char *s1, char *s2);
-int	*ft_parser(int argc, char **argv);
-int	*ft_normalize(int *a, int size);
-
-#endif
+	fprintf(stderr, "a : ");
+	i = 0;
+	while (i < size_a)
+		fprintf(stderr, "%d ", a[i++]);
+	fprintf(stderr, "\nb : ");
+	i = 0;
+	while (i < size_b)
+		fprintf(stderr, "%d ", b[i++]);
+	fprintf(stderr, "\n---\n");
+}

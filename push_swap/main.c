@@ -6,11 +6,11 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 18:53:12 by charlesbese       #+#    #+#             */
-/*   Updated: 2026/11/12 17:50:32 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/13 16:49:12 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "push_swap.h"
 
 static int	ft_is_valid_type(char *type)
 {
@@ -32,7 +32,10 @@ static int	ft_error(void)
 int	main(int argc, char **argv)
 {
 	int	*a;
-	int	*norm;
+	int	*b;
+	int *norm;
+	int	size_a;
+	int	size_b;
 	int	type;
 
 	if (argc < 3)
@@ -43,10 +46,28 @@ int	main(int argc, char **argv)
 	a = ft_parser(argc, argv);
 	if (!a)
 		return (ft_error());
-	norm = ft_normalize(a, argc - 2);
+	size_a = argc - 2;
+	size_b = 0;
+	b = malloc(sizeof(int) * size_a);
+	if (!b)
+		return (free(a), ft_error());
+	norm = ft_normalize(a, size_a);
 	free(a);
 	if (!norm)
-		return (ft_error());
+		return (free(b), ft_error());
+	if (type == 1)
+		sort_simple(norm, b, &size_a, &size_b);
+	if (type == 3)
+		sort_complex(norm, b, &size_a, &size_b);
+	int	i;
+
+	i = 0;
+	while (i < size_a)
+	{
+		printf("%d\t", norm[i]);
+		i++;
+	}
 	free(norm);
+	free(b);
 	return (0);
 }

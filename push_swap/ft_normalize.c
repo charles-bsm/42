@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_normalize.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 17:38:02 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/12 17:53:50 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/13 11:14:56 by tavenel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "push_swap.h"
 
 int	*ft_normalize(int *a, int size)
 {
@@ -36,14 +36,12 @@ int	*ft_normalize(int *a, int size)
 		norm[i] = rank;
 		i++;
 	}
-	int	k;
-
-	k = 0;
-	while (k < size)
-	{
-		printf("\t%d", norm[k]);
-		k++;
-	}
-	printf("\n");
 	return (norm);
 }
+// k = 0;
+// while (k < size)
+// {
+// 	printf("\t%d", norm[k]);
+// 	k++;
+// }
+// printf("\n");

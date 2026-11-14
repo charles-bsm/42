@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charlesbeseme <charlesbeseme@student.42    +#+  +:+       +#+        */
+/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 19:02:28 by charlesbese       #+#    #+#             */
-/*   Updated: 2026/11/11 19:02:44 by charlesbese      ###   ########.fr       */
+/*   Updated: 2026/11/12 18:37:00 by tavenel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "push_swap.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:29:11 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/10 16:47:07 by tavenel          ###   ########.fr       */
+/*   Updated: 2026/11/16 18:31:27 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	push(int *src, int *dst, int *size_src, int *size_dst)
 	int	i;
 
 	if (*size_src == 0)
-		return ;
+	return ;
 	val = src[0];
 	i = *size_dst;
 	while (i > 0)
@@ -37,16 +37,16 @@ static void	push(int *src, int *dst, int *size_src, int *size_dst)
 	(*size_src)--;
 }
 
-void	pa(int *a, int *b, int *size_a, int *size_b)
+void	pa(t_stacks *s)
 {
-	push(b, a, size_b, size_a);
-	write(1, "pa\n", 3);
+	push(s->b, s->a, &s->size_b, &s->size_a);
+	ft_op(s, OP_PA);
 }
 
-void	pb(int *a, int *b, int *size_a, int *size_b)
+void	pb(t_stacks *s)
 {
-	push(a, b, size_a, size_b);
-	write(1, "pb\n", 3);
+	push(s->a, s->b, &s->size_a, &s->size_b);
+	ft_op(s, OP_PB);
 }
 
 // void	print_stack(char *name, int *tab, int size)

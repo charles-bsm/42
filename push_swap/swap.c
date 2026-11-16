@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 14:33:06 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/10 16:32:02 by tavenel          ###   ########.fr       */
+/*   Updated: 2026/11/16 18:18:14 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,23 @@ static void	swap(int *tab, int size)
 	tab[1] = tmp;
 }
 
-void	sa(int *a, int size_a)
+void	sa(t_stacks *s)
 {
-	swap(a, size_a);
-	write(1, "sa\n", 3);
+	swap(s->a, s->size_a);
+	ft_op(s, OP_SA);
 }
 
-void	sb(int *b, int size_b)
+void	sb(t_stacks *s)
 {
-	swap(b, size_b);
-	write(1, "sb\n", 3);
+	swap(s->b, s->size_b);
+	ft_op(s, OP_SB);
 }
 
-void	ss(int *a, int *b, int size_a, int size_b)
+void	ss(t_stacks *s)
 {
-	swap(a, size_a);
-	swap(b, size_b);
-	write(1, "ss\n", 3);
+	swap(s->a, s->size_a);
+	swap(s->b, s->size_b);
+	ft_op(s, OP_SS);
 }
 
 // void	print_stack(char *name, int *tab, int size)

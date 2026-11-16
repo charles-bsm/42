@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:48:38 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/13 11:28:18 by tavenel          ###   ########.fr       */
+/*   Updated: 2026/11/16 18:21:23 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,31 +76,29 @@ static int	ft_double(int *a, int size)
 	return (0);
 }
 
-static int	ft_fill(int *a, int argc, char **argv)
+static int	ft_fill(int *a, int count, char **nums)
 {
 	int	i;
 
-	i = 2;
-	while (i < argc)
+	i = 0;
+	while (i < count)
 	{
-		if (!ft_is_valid_number(argv[i])
-			|| !ft_atoi(argv[i], &a[i - 2]))
+		if (!ft_is_valid_number(nums[i])
+			|| !ft_atoi(nums[i], &a[i]))
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	*ft_parser(int argc, char **argv)
+int	*ft_parser(int count, char **nums)
 {
-	int	size;
 	int	*a;
 
-	size = argc - 2;
-	a = malloc(sizeof(int) * size);
+	a = malloc(sizeof(int) * count);
 	if (!a)
 		return (NULL);
-	if (!ft_fill(a, argc, argv) || ft_double(a, size))
+	if (!ft_fill(a, count, nums) || ft_double(a, count))
 	{
 		free(a);
 		return (NULL);

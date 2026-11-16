@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 11:42:45 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/13 16:31:57 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/16 18:20:17 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,36 +42,31 @@ static int	find_min(int *a, int size)
 	return (min_i);
 }
 
-static void	bring_to_top(int *a, int size_a, int pos)
+static void	bring_to_top(t_stacks *s, int pos)
 {
 	int	i;
 
-	if (pos <= size_a / 2)
+	if (pos <= s->size_a / 2)
 	{
 		i = 0;
 		while (i++ < pos)
-			ra(a, size_a);
+			ra(s);
 	}
 	else
 	{
 		i = pos;
-		while (i++ < size_a)
-			rra(a, size_a);
+		while (i++ < s->size_a)
+			rra(s);
 	}
 }
 
-void	sort_simple(int *a, int *b, int *size_a, int *size_b)
+void	sort_simple(t_stacks *s)
 {
-	while (*size_a > 1 && !is_sorted(a, *size_a))
+	while (s->size_a > 1 && !is_sorted(s->a, s->size_a))
 	{
-		bring_to_top(a, *size_a, find_min(a, *size_a));
-		print_stacks(a, b, *size_a, *size_b);
-		pb(a, b, size_a, size_b);
-		print_stacks(a, b, *size_a, *size_b);
+		bring_to_top(s, find_min(s->a, s->size_a));
+		pb(s);
 	}
-	while (*size_b > 0)
-	{
-		pa(a, b, size_a, size_b);
-		print_stacks(a, b, *size_a, *size_b);
-	}
+	while (s->size_b > 0)
+		pa(s);
 }

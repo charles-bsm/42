@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 16:32:23 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/13 16:42:39 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/16 18:20:44 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,27 @@ static int	max_bits(int size)
 	return (bits);
 }
 
-void	sort_complex(int *a, int *b, int *size_a, int *size_b)
+void	sort_complex(t_stacks *s)
 {
 	int	size;
 	int	bit;
 	int	i;
 
-	size = *size_a;
+	size = s->size_a;
 	bit = 0;
 	while (bit < max_bits(size))
 	{
 		i = 0;
 		while (i < size)
 		{
-			if (((a[0] >> bit) & 1) == 0)
-				pb(a, b, size_a, size_b);
+			if (((s->a[0] >> bit) & 1) == 0)
+				pb(s);
 			else
-				ra(a, *size_a);
+				ra(s);
 			i++;
 		}
-		while (*size_b > 0)
-			pa(a, b, size_a, size_b);
+		while (s->size_b > 0)
+			pa(s);
 		bit++;
 	}
 }

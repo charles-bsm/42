@@ -6,9 +6,11 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:04:43 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/16 18:18:45 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/17 14:57:06 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 #include "push_swap.h"
 
@@ -29,23 +31,23 @@ static void	rotate(int *tab, int size)
 	tab[size - 1] = first;
 }
 
-void	rra(t_stacks *s)
+void	ra(t_stacks *s)
 {
-	reverse_rotate(s->a, s->size_a);
-	ft_op(s, OP_RRA);
+	rotate(s->a, s->size_a);
+	ft_op(s, OP_RA);
 }
 
-void	rrb(t_stacks *s)
+void	rb(t_stacks *s)
 {
-	reverse_rotate(s->b, s->size_b);
-	ft_op(s, OP_RRB);
+	rotate(s->b, s->size_b);
+	ft_op(s, OP_RB);
 }
 
-void	rrr(t_stacks *s)
+void	rr(t_stacks *s)
 {
-	reverse_rotate(s->a, s->size_a);
-	reverse_rotate(s->b, s->size_b);
-	ft_op(s, OP_RRR);
+	rotate(s->a, s->size_a);
+	rotate(s->b, s->size_b);
+	ft_op(s, OP_RR);
 }
 
 // void	print_stack(char *name, int *tab, int size)

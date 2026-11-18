@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tavenel <tavenel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:20:01 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/10 16:45:03 by tavenel          ###   ########.fr       */
+/*   Updated: 2026/11/17 15:01:07 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,23 @@ static void	reverse_rotate(int *tab, int size)
 	tab[0] = last;
 }
 
-void	rra(int *a, int size_a)
+void	rra(t_stacks *s)
 {
-	reverse_rotate(a, size_a);
-	write(1, "rra\n", 4);
+	reverse_rotate(s->a, s->size_a);
+	ft_op(s, OP_RRA);
 }
 
-void	rrb(int *b, int size_b)
+void	rrb(t_stacks *s)
 {
-	reverse_rotate(b, size_b);
-	write(1, "rrb\n", 4);
+	reverse_rotate(s->b, s->size_b);
+	ft_op(s, OP_RRB);
 }
 
-void	rrr(int *a, int *b, int size_a, int size_b)
+void	rrr(t_stacks *s)
 {
-	reverse_rotate(a, size_a);
-	reverse_rotate(b, size_b);
-	write(1, "rrr\n", 4);
+	reverse_rotate(s->a, s->size_a);
+	reverse_rotate(s->b, s->size_b);
+	ft_op(s, OP_RRR);
 }
 
 // void	print_stack(char *name, int *tab, int size)

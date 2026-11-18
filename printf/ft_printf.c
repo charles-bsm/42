@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 22:55:40 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/09 14:03:07 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/17 16:04:58 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,12 @@ int	main(void)
 	a = ft_printf("ft : [100%%]\n");
 	b = printf("std: [100%%]\n");
 	printf("%s (%d / %d)\n\n", a == b ? "OK" : "KO", a, b);
+
+	printf("%d\n", printf(NULL));
+	printf("%d\n", ft_printf(NULL));
+
+	ft_printf("Hi %s, %d%%\n", "Bob", 7);
+	printf("Hi %s, %d%%\n", "Bob", 7);
 
 	return (0);
 }

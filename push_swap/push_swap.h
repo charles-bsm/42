@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 14:47:14 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/16 18:30:05 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/17 14:58:30 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,17 @@ void		rr(t_stacks *s);
 void		rra(t_stacks *s);
 void		rrb(t_stacks *s);
 void		rrr(t_stacks *s);
+void		sort_simple(t_stacks *s);
+void		sort_complex(t_stacks *s);
 void		ft_op(t_stacks *s, int op);
 const char	*ft_op_name(int op);
 int			ft_effective(int type, double disorder);
 void		ft_bench(t_stacks *s, int type, double disorder);
 void		ft_putstr_fd(const char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-void		sort_complex(t_stacks *s);
 double		compute_disorder(int *tab, int size);
 int			ft_strcmp(char *s1, char *s2);
 int			*ft_parser(int count, char **nums);
 int			*ft_normalize(int *a, int size);
-void		print_stacks(int *a, int *b, int size_a, int size_b);
-int			ft_effective(int type, double disorder);
-void		ft_putstr_fd(const char *s, int fd);
-void		ft_putnbr_fd(int n, int fd);
-static const char	*ft_name_a(int op);
-const char	*ft_op_name(int op);
-void		ft_op(t_stacks *s, int op);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 18:53:12 by charlesbese       #+#    #+#             */
-/*   Updated: 2026/11/16 18:25:29 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/17 15:16:45 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,20 @@ static int	ft_solve(int *norm, int size, int type, int bench)
 	return (0);
 }
 
+static void	ft_debug_print(int *tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_putnbr_fd(tab[i], 2);
+		write(2, " ", 1);
+		i++;
+	}
+	write(2, "\n", 1);
+}
+
 int	main(int argc, char **argv)
 {
 	int	*a;
@@ -99,6 +113,7 @@ int	main(int argc, char **argv)
 		return (ft_error());
 	if (ft_solve(norm, argc - start, type, bench))
 		return (free(norm), ft_error());
+	ft_debug_print(norm, argc - start);   /* TEMPORAIRE */
 	free(norm);
 	return (0);
 }

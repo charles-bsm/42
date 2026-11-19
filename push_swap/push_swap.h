@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 14:47:14 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/17 14:58:30 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/19 13:26:21 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void		rra(t_stacks *s);
 void		rrb(t_stacks *s);
 void		rrr(t_stacks *s);
 void		sort_simple(t_stacks *s);
+void		sort_medium(t_stacks *s);
 void		sort_complex(t_stacks *s);
 void		ft_op(t_stacks *s, int op);
 const char	*ft_op_name(int op);

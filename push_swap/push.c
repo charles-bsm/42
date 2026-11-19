@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:29:11 by tavenel           #+#    #+#             */
-/*   Updated: 2026/11/16 18:31:27 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/19 13:53:54 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	push(int *src, int *dst, int *size_src, int *size_dst)
 	int	i;
 
 	if (*size_src == 0)
-	return ;
+		return ;
 	val = src[0];
 	i = *size_dst;
 	while (i > 0)

@@ -6,7 +6,7 @@
 /*   By: chbeseme <chbeseme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 15:48:56 by chbeseme          #+#    #+#             */
-/*   Updated: 2026/11/17 15:02:56 by chbeseme         ###   ########.fr       */
+/*   Updated: 2026/11/19 13:53:27 by chbeseme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static void	ft_print_disorder(double d)
 
 static void	ft_print_strategy(int type, double disorder)
 {
-	static const char	*const names[5] = {"", "Simple", "Medium",
+	static const char *const	names[5] = {"", "Simple", "Medium",
 		"Complex", "Adaptive"};
-	static const char	*const cplx[5] = {"", "O(n²)", "O(n√n)",
+	static const char *const	cplx[5] = {"", "O(n²)", "O(n√n)",
 		"O(n log n)", ""};
 
 	ft_putstr_fd("[bench] strategy:  ", 2);
